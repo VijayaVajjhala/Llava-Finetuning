@@ -20,21 +20,21 @@ This README covers two experiments:
 
 ```
 PathB/
-├─ instructions\_20.json                   # 20 image-instruction pairs (Part A)
-├─ generated\_20.json                      # Model predictions vs ground truth (Part A)
+├─ instructions_20.json                   # 20 image-instruction pairs (Part A)
+├─ generated_20.json                      # Model predictions vs ground truth (Part A)
 
-├─ Homework5\_LLaVA\_LoRA\_Finetune.ipynb    # Notebook with code execution for B1 and B2
+├─ Homework5_LLaVA_LoRA_Finetune.ipynb    # Notebook with code execution for B1 and B2
 ├─ B2/
-│   ├─ llava\_bench\_answers.jsonl          # B2 model answers on LLaVA-Bench-in-the-Wild
-│   ├─ llava\_bench\_scores.jsonl           # GPT-4 evaluation scores (raw)
-│   |─ benchmark\_summary.json             # Final benchmark summary
+│   ├─ llava_bench_answers.jsonl          # B2 model answers on LLaVA-Bench-in-the-Wild
+│   ├─ llava_bench_scores.jsonl           # GPT-4 evaluation scores (raw)
+│   |─ benchmark_summary.json             # Final benchmark summary
 
-├   └─ llava\_2500.json                    # 2,500-pair subset used for B2 training
-├─ full\_run\_logs/
-│   ├─ gpu\_info.txt                       # nvidia-smi output
-│   ├─ training\_log.json                  # Loss curve + hyperparameters
-│   └─ training\_command.sh                # deepspeed command used
-│   └─ train\_log\_B2.txt                   # Finetuning logs
+├   └─ llava_2500.json                    # 2,500-pair subset used for B2 training
+├─ full_run_logs/
+│   ├─ gpu_info.txt                       # nvidia-smi output
+│   ├─ training_log.json                  # Loss curve + hyperparameters
+│   └─ training_command.sh                # deepspeed command used
+│   └─ train_log_B2.txt                   # Finetuning logs
 └─ README.md                              # This file
 ```
 
@@ -57,41 +57,41 @@ PathB/
 ### Training Command
 
 ```bash
-deepspeed /content/LLaVA/llava/train/train\\\_mem.py \\\\
-    --lora\\\_enable True \\\\
-    --lora\\\_r 128 \\\\
-    --lora\\\_alpha 256 \\\\
-    --deepspeed /content/LLaVA/scripts/zero2.json \\\\
-    --model\\\_name\\\_or\\\_path liuhaotian/llava-v1.5-7b \\\\
-    --version v1 \\\\
-    --data\\\_path /content/drive/MyDrive/TCSS590/Llava/data/train.json \\\\
-    --image\\\_folder /content/drive/MyDrive/TCSS590/Llava/data/images \\\\
-    --vision\\\_tower openai/clip-vit-large-patch14-336 \\\\
-    --mm\\\_projector\\\_type mlp2x\\\_gelu \\\\
-    --mm\\\_vision\\\_select\\\_layer -2 \\\\
-    --mm\\\_use\\\_im\\\_start\\\_end False \\\\
-    --mm\\\_use\\\_im\\\_patch\\\_token False \\\\
-    --image\\\_aspect\\\_ratio pad \\\\
-    --bf16 True \\\\
-    --bits 16 \\\\
-    --output\\\_dir /content/LLaVA/checkpoints/llava-lora-experiment \\\\
-    --num\\\_train\\\_epochs 10 \\\\
-    --per\\\_device\\\_train\\\_batch\\\_size 4 \\\\
-    --gradient\\\_accumulation\\\_steps 1 \\\\
-    --evaluation\\\_strategy no \\\\
-    --save\\\_strategy steps \\\\
-    --save\\\_steps 50 \\\\
-    --save\\\_total\\\_limit 1 \\\\
-    --learning\\\_rate 2e-4 \\\\
-    --weight\\\_decay 0.0 \\\\
-    --warmup\\\_ratio 0.03 \\\\
-    --lr\\\_scheduler\\\_type cosine \\\\
-    --logging\\\_steps 1 \\\\
-    --tf32 True \\\\
-    --model\\\_max\\\_length 2048 \\\\
-    --gradient\\\_checkpointing True \\\\
-    --lazy\\\_preprocess True \\\\
-    --report\\\_to none
+deepspeed /content/LLaVA/llava/train/train_mem.py \
+    --lora_enable True \\
+    --lora_r 128 \\
+    --lora_alpha 256 \\
+    --deepspeed /content/LLaVA/scripts/zero2.json \\
+    --model_name_or_path liuhaotian/llava-v1.5-7b \\
+    --version v1 \\
+    --data_path /content/drive/MyDrive/TCSS590/Llava/data/train.json \\
+    --image_folder /content/drive/MyDrive/TCSS590/Llava/data/images \\
+    --vision_tower openai/clip-vit-large-patch14-336 \\
+    --mm_projector_type mlp2x_gelu \\
+    --mm_vision_select_layer -2 \\
+    --mm_use_im_start_end False \\
+    --mm_use_im_patch_token False \\
+    --image_aspect_ratio pad \\
+    --bf16 True \\
+    --bits 16 \\
+    --output_dir /content/LLaVA/checkpoints/llava-lora-experiment \\
+    --num_train_epochs 10 \\
+    --per_device_train_batch_size 4 \\
+    --gradient_accumulation_steps 1 \\
+    --evaluation_strategy no \\
+    --save_strategy steps \\
+    --save_steps 50 \\
+    --save_total_limit 1 \\
+    --learning_rate 2e-4 \\
+    --weight_decay 0.0 \\
+    --warmup_ratio 0.03 \\
+    --lr_scheduler_type cosine \\
+    --logging_steps 1 \\
+    --tf32 True \\
+    --model_max_length 2048 \\
+    --gradient_checkpointing True \\
+    --lazy_preprocess True \\
+    --report_to none
 ```
 
 ### Key Hyperparameters
@@ -109,7 +109,7 @@ deepspeed /content/LLaVA/llava/train/train\\\_mem.py \\\\
 |Batch size|4|Per device|
 |Gradient accumulation|1|Effective batch = 4|
 |DeepSpeed|ZeRO-2|Optimizer state offloading|
-|Attention|Eager|flash\_attn\_2 skipped (compatibility)|
+|Attention|Eager|flash_attn_2 skipped (compatibility)|
 
 ### Training Results
 
@@ -137,49 +137,49 @@ One additional epoch of LoRA fine-tuning on a \~2,500-pair subset of
 evaluation on the built-in LLaVA-Bench-in-the-Wild benchmark scored by GPT-4.
 
 **Date:** 2026-03-17  
-**Dataset:** `llava\\\_instruct\\\_80k.json` (first 2,500 pairs)  
+**Dataset:** `llava_instruct_80k.json` (first 2,500 pairs)  
 **Images:** COCO train2017  
 **Benchmark:** LLaVA-Bench-in-the-Wild (60 questions)  
-**Scorer:** GPT-4 via `eval\\\_gpt\\\_review\\\_bench.py` (openai==0.28, model: gpt-4o-mini)
+**Scorer:** GPT-4 via `eval_gpt_review_bench.py` (openai==0.28, model: gpt-4o-mini)
 
 ### Training Command
 
 ```bash
-deepspeed /content/LLaVA/llava/train/train\\\_mem.py \\\\
-    --lora\\\_enable True \\\\
-    --lora\\\_r 128 \\\\
-    --lora\\\_alpha 256 \\\\
-    --deepspeed /content/LLaVA/scripts/zero2.json \\\\
-    --model\\\_name\\\_or\\\_path liuhaotian/llava-v1.5-7b \\\\
-    --version v1 \\\\
-    --data\\\_path /content/drive/MyDrive/TCSS590/Llava/data/llava\\\_2500.json \\\\
-    --image\\\_folder /content/drive/MyDrive/TCSS590/Llava/data/train2017 \\\\
-    --vision\\\_tower openai/clip-vit-large-patch14-336 \\\\
-    --mm\\\_projector\\\_type mlp2x\\\_gelu \\\\
-    --mm\\\_vision\\\_select\\\_layer -2 \\\\
-    --mm\\\_use\\\_im\\\_start\\\_end False \\\\
-    --mm\\\_use\\\_im\\\_patch\\\_token False \\\\
-    --image\\\_aspect\\\_ratio pad \\\\
-    --bf16 True \\\\
-    --bits 16 \\\\
-    --output\\\_dir /content/drive/MyDrive/TCSS590/Llava/checkpoints/llava-lora-sample \\\\
-    --num\\\_train\\\_epochs 1 \\\\
-    --per\\\_device\\\_train\\\_batch\\\_size 4 \\\\
-    --gradient\\\_accumulation\\\_steps 4 \\\\
-    --evaluation\\\_strategy no \\\\
-    --save\\\_strategy steps \\\\
-    --save\\\_steps 200 \\\\
-    --save\\\_total\\\_limit 3 \\\\
-    --learning\\\_rate 2e-4 \\\\
-    --weight\\\_decay 0.0 \\\\
-    --warmup\\\_ratio 0.03 \\\\
-    --lr\\\_scheduler\\\_type cosine \\\\
-    --logging\\\_steps 10 \\\\
-    --report\\\_to tensorboard \\\\
-    --tf32 True \\\\
-    --model\\\_max\\\_length 2048 \\\\
-    --gradient\\\_checkpointing True \\\\
-    --lazy\\\_preprocess True
+deepspeed /content/LLaVA/llava/train/train_mem.py \\
+    --lora_enable True \\
+    --lora_r 128 \\
+    --lora_alpha 256 \\
+    --deepspeed /content/LLaVA/scripts/zero2.json \\
+    --model_name_or_path liuhaotian/llava-v1.5-7b \\
+    --version v1 \\
+    --data_path /content/drive/MyDrive/TCSS590/Llava/data/llava_2500.json \\
+    --image_folder /content/drive/MyDrive/TCSS590/Llava/data/train2017 \\
+    --vision_tower openai/clip-vit-large-patch14-336 \\
+    --mm_projector_type mlp2x_gelu \\
+    --mm_vision_select_layer -2 \\
+    --mm_use_im_start_end False \\
+    --mm_use_im_patch_token False \\
+    --image_aspect_ratio pad \\
+    --bf16 True \\
+    --bits 16 \\
+    --output_dir /content/drive/MyDrive/TCSS590/Llava/checkpoints/llava-lora-sample \\
+    --num_train_epochs 1 \\
+    --per_device_train_batch_size 4 \\
+    --gradient_accumulation_steps 4 \\
+    --evaluation_strategy no \\
+    --save_strategy steps \\
+    --save_steps 200 \\
+    --save_total_limit 3 \\
+    --learning_rate 2e-4 \\
+    --weight_decay 0.0 \\
+    --warmup_ratio 0.03 \\
+    --lr_scheduler_type cosine \\
+    --logging_steps 10 \\
+    --report_to tensorboard \\
+    --tf32 True \\
+    --model_max_length 2048 \\
+    --gradient_checkpointing True \\
+    --lazy_preprocess True
 ```
 
 ### Key Hyperparameters
@@ -259,7 +259,7 @@ for stable convergence.
 * With only 20 samples (Part A) the model **memorizes** rather than generalizes
 * Loss reaching near-zero in Part A is expected and confirms the pipeline works
 * For real generalization, 500–5000+ diverse samples are recommended
-* Part B2 loss oscillation suggests `learning\\\_rate` should be reduced to `2e-5`
+* Part B2 loss oscillation suggests `learning_rate` should be reduced to `2e-5`
 for a more stable single-epoch run on a small subset
 * LoRA weights saved to:
 
