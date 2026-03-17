@@ -1,0 +1,162 @@
+[
+  {
+    "id": "iam_000",
+    "image": "iam_000.jpg",
+    "instruction": "Transcribe the handwritten text in this image.",
+    "ground_truth": "put down a resolution on the subject",
+    "generated": "put down a resolution on the subject",
+    "match": true
+  },
+  {
+    "id": "iam_001",
+    "image": "iam_001.jpg",
+    "instruction": "What does the handwriting in this image say?",
+    "ground_truth": "and he is to be backed by Mr. Will",
+    "generated": "and he is to be backed by Mr. Will",
+    "match": true
+  },
+  {
+    "id": "iam_002",
+    "image": "iam_002.jpg",
+    "instruction": "Read and transcribe the text shown in this handwritten line.",
+    "ground_truth": "nominating any more Labour life Peers",
+    "generated": "nominating any more Labour life Peers",
+    "match": true
+  },
+  {
+    "id": "iam_003",
+    "image": "iam_003.jpg",
+    "instruction": "What is written in this image? Please transcribe it exactly.",
+    "ground_truth": "M Ps tomorrow. Mr. Michael Foot has",
+    "generated": "M Ps tomorrow. Mr. Michael Foot has",
+    "match": true
+  },
+  {
+    "id": "iam_004",
+    "image": "iam_004.jpg",
+    "instruction": "Can you read the handwritten text in this image and write it out?",
+    "ground_truth": "Griffiths, M P for Manchester Exchange .",
+    "generated": "Griffiths, M P for Manchester Exchange .",
+    "match": true
+  },
+  {
+    "id": "iam_005",
+    "image": "iam_005.jpg",
+    "instruction": "Transcribe the handwritten text in this image.",
+    "ground_truth": "is to be made at a meeting of Labour",
+    "generated": "to be made at a meeting of Labour",
+    "match": false
+  },
+  {
+    "id": "iam_006",
+    "image": "iam_006.jpg",
+    "instruction": "What does the handwriting in this image say?",
+    "ground_truth": "A MOVE to stop Mr. Gaitskell from",
+    "generated": "MOVE to stop Mr. Gaitskell from",
+    "match": false
+  },
+  {
+    "id": "iam_007",
+    "image": "iam_007.jpg",
+    "instruction": "Read and transcribe the text shown in this handwritten line.",
+    "ground_truth": "0M P for Manchester Exchange .",
+    "generated": "0M P for Manchester Exchange .",
+    "match": true
+  },
+  {
+    "id": "iam_008",
+    "image": "iam_008.jpg",
+    "instruction": "What is written in this image? Please transcribe it exactly.",
+    "ground_truth": "A MOVE to stop Mr. Gaitskell from nominating",
+    "generated": "A MOVE to stop Mr. Gaitskell from nominating",
+    "match": true
+  },
+  {
+    "id": "iam_009",
+    "image": "iam_009.jpg",
+    "instruction": "Can you read the handwritten text in this image and write it out?",
+    "ground_truth": "meeting of Labour 0M Ps tommorow . Mr. Michael",
+    "generated": "meeting of Labour 0M Ps tommorow . Mr. Michael",
+    "match": true
+  },
+  {
+    "id": "iam_010",
+    "image": "iam_010.jpg",
+    "instruction": "Transcribe the handwritten text in this image.",
+    "ground_truth": "any more Labour life Peers is to be made at a",
+    "generated": "any more Labour life Peers is to be made at a",
+    "match": true
+  },
+  {
+    "id": "iam_011",
+    "image": "iam_011.jpg",
+    "instruction": "What does the handwriting in this image say?",
+    "ground_truth": "Foot has put down a resolution on the subject",
+    "generated": "Foot has put down a resolution on the subject",
+    "match": true
+  },
+  {
+    "id": "iam_012",
+    "image": "iam_012.jpg",
+    "instruction": "Read and transcribe the text shown in this handwritten line.",
+    "ground_truth": "and he is to be backed by Mr. Will Griffiths ,",
+    "generated": "and that Labour should not take any steps",
+    "match": false
+  },
+  {
+    "id": "iam_013",
+    "image": "iam_013.jpg",
+    "instruction": "What is written in this image? Please transcribe it exactly.",
+    "ground_truth": "which would appear to \" prop up \" an out-dated",
+    "generated": "would not take any steps",
+    "match": false
+  },
+  {
+    "id": "iam_014",
+    "image": "iam_014.jpg",
+    "instruction": "Can you read the handwritten text in this image and write it out?",
+    "ground_truth": "Though they may gather some Left-wing support , a",
+    "generated": "though they may gather some Left-wing support , a",
+    "match": true
+  },
+  {
+    "id": "iam_015",
+    "image": "iam_015.jpg",
+    "instruction": "Transcribe the handwritten text in this image.",
+    "ground_truth": "life peers into existence , they should not",
+    "generated": "life peers into existence , they should not",
+    "match": true
+  },
+  {
+    "id": "iam_016",
+    "image": "iam_016.jpg",
+    "instruction": "What does the handwriting in this image say?",
+    "ground_truth": "and that Labour should not take any steps",
+    "generated": "and that Labour should not take any steps",
+    "match": true
+  },
+  {
+    "id": "iam_017",
+    "image": "iam_017.jpg",
+    "instruction": "Read and transcribe the text shown in this handwritten line.",
+    "ground_truth": "now put forward nominees . He believes",
+    "generated": "now put forward nominees . He believes",
+    "match": true
+  },
+  {
+    "id": "iam_018",
+    "image": "iam_018.jpg",
+    "instruction": "What is written in this image? Please transcribe it exactly.",
+    "ground_truth": "large majority of Labour M Ps are likely to",
+    "generated": "ageing might not be so bad , after all , it could be worse",
+    "match": false
+  },
+  {
+    "id": "iam_019",
+    "image": "iam_019.jpg",
+    "instruction": "Can you read the handwritten text in this image and write it out?",
+    "ground_truth": "that the House of Lords should be abolished",
+    "generated": "that Labour should not take any steps",
+    "match": false
+  }
+]

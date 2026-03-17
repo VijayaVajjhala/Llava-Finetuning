@@ -1,0 +1,23 @@
+{
+  "total_questions": 60,
+  "gpt4_avg": 8.2,
+  "your_avg": 5.7,
+  "relative_score_pct": 69.5,
+  "by_category": {
+    "llava_bench_complex": {
+      "gpt4": 7.86,
+      "yours": 6.54,
+      "relative": 83.2
+    },
+    "llava_bench_conv": {
+      "gpt4": 8.94,
+      "yours": 5.12,
+      "relative": 57.2
+    },
+    "llava_bench_detail": {
+      "gpt4": 8.0,
+      "yours": 4.8,
+      "relative": 60.0
+    }
+  }
+}

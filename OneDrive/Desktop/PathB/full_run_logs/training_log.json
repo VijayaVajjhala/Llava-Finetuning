@@ -1,0 +1,94 @@
+{
+  "model": "liuhaotian/llava-v1.5-7b",
+  "lora_r": 128,
+  "lora_alpha": 256,
+  "learning_rate": 0.0002,
+  "epochs": 10,
+  "batch_size": 4,
+  "num_samples": 20,
+  "train_runtime_s": 112.76,
+  "final_train_loss": 0.451,
+  "timestamp": "2026-03-12T05:15:06.724454",
+  "loss_curve": [
+    {
+      "step": 1,
+      "epoch": 0.2,
+      "loss": 4.9026
+    },
+    {
+      "step": 2,
+      "epoch": 0.4,
+      "loss": 5.12
+    },
+    {
+      "step": 3,
+      "epoch": 0.6,
+      "loss": 1.9412
+    },
+    {
+      "step": 4,
+      "epoch": 0.8,
+      "loss": 3.5298
+    },
+    {
+      "step": 5,
+      "epoch": 1.0,
+      "loss": 1.1968
+    },
+    {
+      "step": 6,
+      "epoch": 1.2,
+      "loss": 1.0964
+    },
+    {
+      "step": 7,
+      "epoch": 1.4,
+      "loss": 1.3553
+    },
+    {
+      "step": 8,
+      "epoch": 1.6,
+      "loss": 0.9386
+    },
+    {
+      "step": 9,
+      "epoch": 1.8,
+      "loss": 0.4259
+    },
+    {
+      "step": 10,
+      "epoch": 2.0,
+      "loss": 0.5288
+    },
+    {
+      "step": 15,
+      "epoch": 3.0,
+      "loss": 0.2469
+    },
+    {
+      "step": 18,
+      "epoch": 3.6,
+      "loss": 0.0088
+    },
+    {
+      "step": 25,
+      "epoch": 5.0,
+      "loss": 0.0277
+    },
+    {
+      "step": 30,
+      "epoch": 6.0,
+      "loss": 0.0003
+    },
+    {
+      "step": 40,
+      "epoch": 8.0,
+      "loss": 0.0003
+    },
+    {
+      "step": 50,
+      "epoch": 10.0,
+      "loss": 0.0003
+    }
+  ]
+}
